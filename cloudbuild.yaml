@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/mk811/helloworld']
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/k8s-best-practices/helloworld'
+  - '.'
+images: 
+  - 'gcr.io/k8s-best-practices/helloworld'
